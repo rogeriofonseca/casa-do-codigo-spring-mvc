@@ -9,6 +9,6 @@ public class HomeController {
     @RequestMapping("/")
     public String index(){
 //        System.out.println("Carregando produtos...");
-        return "hello-world.jsp";
+        return "hello-world";
     }
 }
