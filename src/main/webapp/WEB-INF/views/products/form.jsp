@@ -7,14 +7,14 @@
 <body>
   <form method="post" action="/casadocodigo/produtos">
     <div>
-        <label for="title">Titulo</label>
+        <label for="title">Título</label>
         <input type="text" name="title" id="title"/>
     </div>
     <div>
-        <label for="description">DescricÌ§aÌƒo</label>
+        <label for="description">Descriçãoƒo</label>
         <textarea rows="10" cols="20" name="description" id="description"></textarea>
     </div> <div>
-        <label for="pages">NuÌmero de paginas</label>
+        <label for="pages">Número de páginas</label>
         <input type="text" name="pages" id="pages"/>
     </div>
     <div>
