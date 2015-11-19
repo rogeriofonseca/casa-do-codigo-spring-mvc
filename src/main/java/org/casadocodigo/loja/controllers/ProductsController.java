@@ -1,5 +1,6 @@
 package org.casadocodigo.loja.controllers;
 
+import org.casadocodigo.loja.controllers.models.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,9 +12,9 @@ public class ProductsController {
         return "products/form";
     }
     
-    @RequestMapping()
-    public String save(){
-        System.out.println("Cadastrando o produto: ");
+    @RequestMapping("/produtos")
+    public String save(Product product){
+        System.out.println("Cadastrando o produto: "+product);
         return "products/ok";
     }
 }
