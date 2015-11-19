@@ -1,16 +1,16 @@
 package org.casadocodigo.loja.controllers.models;
 
 public class Product {
-    private String tittle;
+    private String title;
     private String description;
     private int pages;
 
     public String getTittle() {
-        return tittle;
+        return title;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTittle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -31,6 +31,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "tittle=" + tittle + ", description=" + description + ", pages=" + pages + '}';
+        return "Product{" + "tittle=" + title + ", description=" + description + ", pages=" + pages + '}';
     }
 }
