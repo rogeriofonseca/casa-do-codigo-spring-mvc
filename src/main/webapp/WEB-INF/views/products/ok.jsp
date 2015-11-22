@@ -7,6 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Ihuuuuuuuu</h1>
+  <h1>Produto Cadastrado!</h1>
 </body>
 </html>
