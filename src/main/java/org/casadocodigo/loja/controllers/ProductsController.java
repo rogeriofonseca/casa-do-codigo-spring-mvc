@@ -1,5 +1,6 @@
 package org.casadocodigo.loja.controllers;
 
+import java.util.Map;
 import javax.transaction.Transactional;
 import org.casadocodigo.loja.models.Product;
 import org.casadocodigo.loja.daos.ProductDAO;
@@ -22,6 +23,9 @@ public class ProductsController {
     public ModelAndView form(){
         ModelAndView modelAndView = new ModelAndView("products/form");
         modelAndView.addObject("types", BookType.values());
+
+//        Map<String,Object> modelMap =  modelAndView.getModel();
+//        modelMap.keySet();
         return modelAndView;
     }
     
@@ -33,8 +37,8 @@ public class ProductsController {
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView save(Product product){
+    public String save(Product product){
         productDAO.save(product);
-        return list();
+        return "redirect:produtos";
     }
 }
