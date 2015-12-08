@@ -11,13 +11,15 @@
             ${sucesso}
         </div>
         <table>
-            <tr>
+            <th>
                 <td>Titulo</td>
+                <td>Data</td>
                 <td>Valores</td>
-            </tr>
+            </th>
             <c:forEach items="${products}" var="product">
                 <tr>
                     <td>${product.title}</td>
+<!--                    <td>${product.releaseDate}</td>-->
                     <td>
                         <c:forEach items="${product.prices}" var="price">
                             [${price.value} - ${price.bookType}]

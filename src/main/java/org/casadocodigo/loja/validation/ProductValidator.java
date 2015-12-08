@@ -1,4 +1,3 @@
-
 package org.casadocodigo.loja.validation;
 
 import org.casadocodigo.loja.models.Product;
