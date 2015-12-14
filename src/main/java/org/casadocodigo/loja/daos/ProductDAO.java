@@ -1,4 +1,3 @@
-
 package org.casadocodigo.loja.daos;
 
 import java.util.List;
@@ -21,5 +20,9 @@ public class ProductDAO {
     public List<Product> list(){
         return manager
         .createQuery("select distinct(p) from Product p join fetch p.prices", Product.class).getResultList();
+    }
+
+    public Product find(Integer id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

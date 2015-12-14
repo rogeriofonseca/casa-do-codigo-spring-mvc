@@ -1,6 +1,8 @@
 package org.casadocodigo.loja.infra;
 
-import java.io.File;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +15,16 @@ public class FileSaver {
     @Autowired
     private HttpServletRequest request;
     
-    public String write(String baseFolder, MultipartFile file){
-        String realPath = request.getServletContext().getRealPath("/"+baseFolder);
+    @Autowired
+    private AmazonS3Client s3;
+    
+    public String write(String baseFolder, MultipartFile multipartFile){
         try{
-            String path = realPath+"/"+file.getOriginalFilename();
-            file.transferTo(new File(path));
-            return baseFolder+"/"+file.getOriginalFilename();
-        }catch(IOException e){
+            s3.putObject("casadocodigo", multipartFile.getOriginalFilename(), multipartFile.getInputStream(), new ObjectMetadata());
+            
+            //url de acesso ao arquivo
+            return "https://s3.amazonaws.com/casadocodigo/"+multipartFile.getOriginalFilename()+"?noAuth=true";
+        }catch(AmazonClientException | IOException e){
             throw new RuntimeException(e);
         }
     }
