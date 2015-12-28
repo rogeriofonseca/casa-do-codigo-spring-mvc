@@ -20,7 +20,8 @@
             <c:forEach items="${products}" var="product">
                 <tr>
                     <td>${product.title}</td>
-                    <td><a href="${spring:mvcUrl('PC#show').arg(0,product.id).build}" >${product.releaseDate}</td>
+                    <!--<td>${product.releaseDate}</td>-->
+                    <td><a href="${spring:mvcUrl('PC#show').arg(0,product.id).build()}" >${product.title}</td>
                     <td>
                         <c:forEach items="${product.prices}" var="price">
                             [${price.value} - ${price.bookType}]

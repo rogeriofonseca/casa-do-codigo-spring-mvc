@@ -1,6 +1,5 @@
 package org.casadocodigo.loja.controllers;
 
-import javax.servlet.http.Part;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 import org.casadocodigo.loja.models.Product;
@@ -56,14 +55,16 @@ public class ProductsController {
 //        if(bindingResult.hasErrors()){
 //            return form(product);
 //        }
-        String webPath = fileSaver.write("uploaded-images",summary);
-        product.setSummaryPath(webPath);
+        if(!summary.isEmpty()){
+            String webPath = fileSaver.write("uploaded-images",summary);
+            product.setSummaryPath(webPath);
+        }
         productDAO.save(product);
         redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso");
         return new ModelAndView("redirect:produtos");
     }
     
-    @RequestMapping(method = RequestMethod.GET, value="/{id}")
+    @RequestMapping(value="/{id}")
     public ModelAndView show(@PathVariable("id") Integer id){
         ModelAndView modelAndView = new ModelAndView("products/show");
         Product product = productDAO.find(id);

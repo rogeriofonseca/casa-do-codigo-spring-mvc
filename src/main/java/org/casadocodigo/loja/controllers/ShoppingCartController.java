@@ -1,6 +1,5 @@
 package org.casadocodigo.loja.controllers;
 
-import com.amazonaws.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.casadocodigo.loja.daos.ProductDAO;
@@ -33,5 +32,10 @@ public class ShoppingCartController {
         Product product = productDAO.find(productId);
         ShoppingItem item = new ShoppingItem(product,bookType);
         return item;
+    }
+    
+    @RequestMapping(method=RequestMethod.GET)
+    public String items(){
+            return "shoppingCart/items";
     }
 }

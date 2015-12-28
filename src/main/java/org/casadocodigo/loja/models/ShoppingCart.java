@@ -4,7 +4,12 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
+@Component
+@Scope(value = WebApplicationContext.SCOPE_APPLICATION)
 public class ShoppingCart {
 
     private Map<ShoppingItem, Integer> items = new LinkedHashMap<ShoppingItem, Integer>();
@@ -21,9 +26,11 @@ public class ShoppingCart {
     }
 
 //    Lambda expression java 8
-//    public Integer getQuantity() {
-//        return items.values().stream().reduce(0, (next, accumulator) -> next + accumulator);
-//    }
+    public Integer getQuantity() {
+        return new Integer(50);
+//        return items.values().stream()
+//                .reduce(0, (next, accumulator) -> next + accumulator);
+    }
 
     public Collection<ShoppingItem> getList() {
         return items.keySet();

@@ -3,8 +3,10 @@ package org.casadocodigo.loja.daos;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import org.casadocodigo.loja.models.Product;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class ProductDAO {
@@ -22,7 +24,11 @@ public class ProductDAO {
         .createQuery("select distinct(p) from Product p join fetch p.prices", Product.class).getResultList();
     }
 
+    @Transactional
     public Product find(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        TypedQuery<Product> query = manager
+                .createQuery(
+                        "select distinct(p) from Product p join fetch p.prices where p.id=:id", Product.class).setParameter("id", id);
+        return query.getSingleResult();
     }
 }
