@@ -15,8 +15,12 @@ public class ShoppingItem {
 
     }
 
-    BigDecimal getTotal(Integer quantity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public BigDecimal getPrice(){
+        /** Navegue também até a classe Product, para descobrir como é a implementação do método priceFor **/
+        return product.priceFor(bookType);
     }
-
+    
+    public BigDecimal getTotal(Integer quantity) {
+        return getPrice().multiply(new BigDecimal(quantity));
+    }
 }

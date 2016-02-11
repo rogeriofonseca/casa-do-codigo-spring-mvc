@@ -27,9 +27,8 @@ public class ShoppingCart {
 
 //    Lambda expression java 8
     public Integer getQuantity() {
-        return new Integer(50);
-//        return items.values().stream()
-//                .reduce(0, (next, accumulator) -> next + accumulator);
+        return items.values().stream()
+                .reduce(0, (next, accumulator) -> next + accumulator);
     }
 
     public Collection<ShoppingItem> getList() {
