@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/shopping")
-@Scope(value = WebApplicationContext.SCOPE_SESSION)
+@Scope(value = WebApplicationContext.SCOPE_REQUEST)
 public class ShoppingCartController {
     
     @Autowired
