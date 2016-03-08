@@ -12,4 +12,9 @@ public class HomeController {
 //        System.out.println("Carregando produtos...");
         return new ModelAndView("redirect:/produtos");
     }
+    
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
 }
