@@ -54,7 +54,7 @@
 						<fmt:message key="navigation.category.java" /></a>
                 <li class="category"><a href="/collections/livros-de-mobile">
 						<fmt:message key="navigation.category.mobile" /></a>
-                <li class="category"><ahref="/collections/livros-desenvolvimento-web"> Web </a>
+                <li class="category"><a href="/collections/livros-desenvolvimento-web"> Web </a>
 						<fmt:message key="navigation.category.web" /></a>
                 <li class="category"><a href="/collections/outros">
                         <fmt:message key="navigation.category.others" /></a>
