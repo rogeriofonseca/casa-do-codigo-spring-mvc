@@ -9,10 +9,10 @@
         <title>Insert title here</title>
     </head>
     <body>
-    <sec:authorize access="isAuthenticated()">
-        <sec:authentication property="principal" var="user"/>
-        <div>Olá ${user.name}</div>
-    </sec:authorize>
+    <security:authorize access="isAuthenticated()">
+        <security:authentication property="principal" var="user"/>
+        <div>Olá, ${user.name}.</div>
+    </security:authorize>
     <div>
         ${sucesso}
     </div>
