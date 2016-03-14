@@ -11,7 +11,7 @@
     <body>
     <security:authorize access="isAuthenticated()">
         <security:authentication property="principal" var="user"/>
-        <div>Olá, ${user.name}.</div>
+        <div><spring:message code="users.welcome" arguments="${user.name}" /></div>
     </security:authorize>
     <div>
         ${sucesso}

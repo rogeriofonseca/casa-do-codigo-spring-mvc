@@ -2,6 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -17,7 +18,7 @@
                 <form:errors path="title"/>
             </div>
             <div>
-                <label for="description">Descrição</label>
+                <label for="description"><fmt:message key="product.description" /></label>
                 <form:textarea path="description" rows="10" cols="20"/>
                 <form:errors path="description"/>
             </div> <div>
